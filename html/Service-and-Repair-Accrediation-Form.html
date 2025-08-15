@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Service and Repair Accrediation Form</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/documents.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/progress-nav.css">
+
+    <!-- JS -->
+    <script src="js/scripts.js"></script>
+    <script src="js/documents.js"></script>
+    <script src="js/formsets.js"></script>
+    <script src="js/lazy_loading.js"></script>
+    
+    <!-- HTMX -->
+    <script src="https://unpkg.com/htmx.org@latest"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="layout">
+        
+        <aside class="side-navbar extended">
+    <button id="collapse-nav-btn">
+        <i class="fa-solid fa-angle-left"></i>
+    </button>
+    <nav>
+        <header>
+            <h1>Collapse Navbar</h1>
+        </header>
+        <section aria-labelledby="main-menu-heading">
+            <h2 class="nav-section-heading">Main</h2>
+            <ul class="side-nav-list">
+                <li class="nav-item">
+                    <a href="/" class="nav-link">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown active">
+                    <button class="nav-dropdown-btn">
+                        <i class="fa-solid fa-file"></i>
+                        <span>Create</span>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </button>
+                    <ul class="nav-dropdown-list">
+                        <li>
+                            <a href="/documents/create/sales-promotion">Sales Promotion Application</a>
+                        </li>
+                        <li>
+                            <a href="/documents/create/personal-data-sheet">Personal Data Sheet</a>
+                        </li>
+                        <li>
+                            <a href="/documents/create/service-repair-accreditation">Service and Repair Accreditation</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section aria-label="others-menu-heading">
+            <h2 class="nav-section-heading">Others</h2>
+            <ul class="side-nav-list">
+                <li class="nav-item">
+                    <a href="" class="nav-link">
+                        <i class="fa-solid fa-gear"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="account-menu-heading" id="account-menu-section">
+            <ul class="side-nav-list">
+                <li class="nav-item">
+                    <a href="" id="profile-link">
+                        <img src="/media/profile_pictures/default-avatar-icon.jpg" alt="">
+                        <div id="logged-in-user-details">
+                            <strong>vince</strong>
+                            <p>Admin</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/users/logout" class="nav-link">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+    </nav>
+</aside>
+
+        <div class="main-content">
+            
+    <div class="form-container">
+        <header>
+            <h1>Accreditation of Service and Repair Enterprises Application Form</h1>
+        </header>
+        <div class="form-wrapper">
+
+            <form class="documents-form" action="/documents/create/service-repair-accreditation" method="POST">
+                <input type="hidden" name="" value="">
+                
+                
+                    
+                        
+
+<fieldset id="application-details-fieldset">
+    <p class="part-count">Part 1 of 4</p>
+    <legend>Application Details</legend>
+    <div class="stepped-layout">
+        
+            
+                <div class="step-grid">
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_application_type">Application type <span class='required-label'>*</span></label>
+                                <select name="application_type" placeholder="Enter Application type" class="form-group" required id="id_application_type">
+  <option value="" selected>---------</option>
+
+  <option value="NEW">New</option>
+
+  <option value="RENEWAL">Renewal</option>
+
+</select>
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_category">Category <span class='required-label'>*</span></label>
+                                <select name="category" placeholder="Enter Category" class="form-group" required id="id_category">
+  <option value="" selected>---------</option>
+
+  <option value="MOTOR VEHICLES &amp; HEAVY EQUIPMENT">Motor Vehicles &amp; Heavy Equipment</option>
+
+  <option value="MEDICAL &amp; DENTAL EQUIPMENT">Medical &amp; Dental Equipment</option>
+
+  <option value="OFFICE MACHINE/DATA PROCESSING EQUIPMENT">Office Machine/Data Processing Equipment</option>
+
+  <option value="ENGINES &amp; ENGINEERING WORKS (MACHINE SHOPS)">Engines &amp; Engineering Works (Machine Shops)</option>
+
+  <option value="ELECTRONICS, ELECTRICAL, AIRCONDITIONING &amp; REFRIGERATION">Electronics, Electrical, Airconditioning &amp; Refrigeration</option>
+
+  <option value="OTHER CONSUMER MECHANICAL &amp; INDUSTRIAL EQUIPMENT, APPLIANCES OR DEVICES">Other Consumer Mechanical &amp; Industrial Equipment, Appliances or Devices</option>
+
+</select>
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_star_rating">Star rating <span class='required-label'>*</span></label>
+                                <select name="star_rating" placeholder="Enter Star rating" class="form-group" required id="id_star_rating">
+  <option value="" selected>---------</option>
+
+  <option value="1">1</option>
+
+  <option value="2">2</option>
+
+  <option value="3">3</option>
+
+  <option value="4">4</option>
+
+  <option value="5">5</option>
+
+</select>
+                            </div>
+                        
+                    
+                </div>
+            
+        
+    </div>
+</fieldset>
+                    
+                
+                    
+                        
+
+<fieldset id="business-information-fieldset">
+    <p class="part-count">Part 2 of 4</p>
+    <legend>Business/Personal Information</legend>
+    <div class="stepped-layout">
+        
+            
+                <div class="step-grid">
+                    
+                        
+                            <div class="form-group 
+                                    
+                                        full-width
+                                    ">
+                                <label for="id_name_of_business">Name of business <span class='required-label'>*</span></label>
+                                <input type="text" name="name_of_business" maxlength="255" placeholder="Enter Name of business" class="form-group" required id="id_name_of_business">
+                            </div>
+                        
+                    
+                </div>
+            
+        
+            
+                <div class="step-grid">
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_building_name_or_number">Building name or number <span class='required-label'>*</span></label>
+                                <input type="text" name="building_name_or_number" maxlength="50" placeholder="Enter Building name or number" class="form-group" required id="id_building_name_or_number">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_street_name">Street name <span class='required-label'>*</span></label>
+                                <input type="text" name="street_name" maxlength="50" placeholder="Enter Street name" class="form-group" required id="id_street_name">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_barangay">Barangay <span class='required-label'>*</span></label>
+                                <input type="text" name="barangay" maxlength="50" placeholder="Enter Barangay" class="form-group" required id="id_barangay">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_city_or_municipality">City or municipality <span class='required-label'>*</span></label>
+                                <input type="text" name="city_or_municipality" maxlength="50" placeholder="Enter City or municipality" class="form-group" required id="id_city_or_municipality">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_province">Province <span class='required-label'>*</span></label>
+                                <input type="text" name="province" maxlength="50" placeholder="Enter Province" class="form-group" required id="id_province">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_region">Region <span class='required-label'>*</span></label>
+                                <input type="text" name="region" maxlength="50" placeholder="Enter Region" class="form-group" required id="id_region">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_zip_code">Zip code <span class='required-label'>*</span></label>
+                                <input type="text" name="zip_code" maxlength="10" placeholder="Enter Zip code" class="form-group" required id="id_zip_code">
+                            </div>
+                        
+                    
+                </div>
+            
+        
+            
+                <div class="step-grid">
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_email_address">Email address <span class='required-label'>*</span></label>
+                                <input type="email" name="email_address" maxlength="40" placeholder="Enter Email address" class="form-group" required id="id_email_address">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_mobile_number">Mobile number <span class='required-label'>*</span></label>
+                                <input type="text" name="mobile_number" maxlength="20" placeholder="Enter Mobile number" class="form-group" required id="id_mobile_number">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_telephone_number">Telephone number <span class='required-label'>*</span></label>
+                                <input type="text" name="telephone_number" maxlength="20" placeholder="Enter Telephone number" class="form-group" required id="id_telephone_number">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_fax_number">Fax number</label>
+                                <input type="text" name="fax_number" maxlength="20" class="form-group" id="id_fax_number">
+                            </div>
+                        
+                    
+                </div>
+            
+        
+            
+                <div class="step-grid">
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_sex">Sex <span class='required-label'>*</span></label>
+                                <select name="sex" placeholder="Enter Sex" class="form-group" required id="id_sex">
+  <option value="" selected>---------</option>
+
+  <option value="MALE">Male</option>
+
+  <option value="FEMALE">Female</option>
+
+</select>
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_social_classification">Social classification <span class='required-label'>*</span></label>
+                                <select name="social_classification" placeholder="Enter Social classification" class="form-group" required id="id_social_classification">
+  <option value="" selected>---------</option>
+
+  <option value="ABLED">Abled</option>
+
+  <option value="PWD">Differently Abled</option>
+
+  <option value="IP">Indigenous Person</option>
+
+  <option value="SENIOR">Senior Citizen</option>
+
+  <option value="YOUTH">Youth</option>
+
+  <option value="OSY">Out-of-School Youth</option>
+
+</select>
+                            </div>
+                        
+                    
+                </div>
+            
+        
+    </div>
+</fieldset>
+                    
+                
+                    
+                        
+
+<fieldset id="-fieldset">
+    <p class="part-count">Part 3 of 4</p>
+    <legend>Authorized Signatory</legend>
+    <div class="stepped-layout">
+        
+            
+                <div class="step-grid">
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_first_name">First name <span class='required-label'>*</span></label>
+                                <input type="text" name="first_name" maxlength="30" placeholder="Enter First name" class="form-group" required id="id_first_name">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_middle_name">Middle name</label>
+                                <input type="text" name="middle_name" maxlength="30" class="form-group" id="id_middle_name">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_last_name">Last name <span class='required-label'>*</span></label>
+                                <input type="text" name="last_name" maxlength="30" placeholder="Enter Last name" class="form-group" required id="id_last_name">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_title">Title <span class='required-label'>*</span></label>
+                                <input type="text" name="title" maxlength="20" placeholder="Enter Title" class="form-group" required id="id_title">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_suffix">Suffix</label>
+                                <input type="text" name="suffix" maxlength="10" class="form-group" id="id_suffix">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_designation">Designation <span class='required-label'>*</span></label>
+                                <input type="text" name="designation" maxlength="255" placeholder="Enter Designation" class="form-group" required id="id_designation">
+                            </div>
+                        
+                    
+                </div>
+            
+        
+    </div>
+</fieldset>
+                    
+                
+                    
+                        
+
+<fieldset id="-fieldset">
+    <p class="part-count">Part 4 of 4</p>
+    <legend>Business Classification</legend>
+    <div class="stepped-layout">
+        
+            
+                <div class="step-grid">
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_asset_size">Asset size <span class='required-label'>*</span></label>
+                                <select name="asset_size" placeholder="Enter Asset size" class="form-group" required id="id_asset_size">
+  <option value="" selected>---------</option>
+
+  <option value="MICRO">Micro (&lt;Php3M)</option>
+
+  <option value="SMALL">Small (Php3M - &lt;15M)</option>
+
+  <option value="MEDIUM">Medium (Php15M - 100M)</option>
+
+  <option value="LARGE">Large (&gt;Php100M)</option>
+
+</select>
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_form_of_organization">Form of organization <span class='required-label'>*</span></label>
+                                <select name="form_of_organization" placeholder="Enter Form of organization" class="form-group" required id="id_form_of_organization">
+  <option value="" selected>---------</option>
+
+  <option value="SP">Single Proprietorship</option>
+
+  <option value="CORP">Corporation</option>
+
+  <option value="PARTNERSHIP">Partnership</option>
+
+  <option value="COOP">Cooperative</option>
+
+</select>
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_industry_classification">Industry classification</label>
+                                <input type="text" name="industry_classification" maxlength="255" class="form-group" id="id_industry_classification">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_industry_classification">Industry classification</label>
+                                <input type="text" name="industry_classification" maxlength="255" class="form-group" id="id_industry_classification">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_annual_gross_service_revenue">Annual gross service revenue</label>
+                                <input type="number" name="annual_gross_service_revenue" step="0.01" class="form-group" aria-describedby="id_annual_gross_service_revenue_helptext" id="id_annual_gross_service_revenue">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_capital_investment">Capital investment</label>
+                                <input type="number" name="capital_investment" step="0.01" class="form-group" id="id_capital_investment">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_tax_identification_number">Tax identification number <span class='required-label'>*</span></label>
+                                <input type="text" name="tax_identification_number" maxlength="20" placeholder="Enter Tax identification number" class="form-group" required id="id_tax_identification_number">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_date_established">Date established</label>
+                                <input type="date" name="date_established" class="form-group" id="id_date_established">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_total_employees">Total employees <span class='required-label'>*</span></label>
+                                <input type="number" name="total_employees" min="0" placeholder="Enter Total employees" class="form-group" required id="id_total_employees">
+                            </div>
+                        
+                    
+                </div>
+            
+        
+    </div>
+</fieldset>
+                    
+                
+
+                <fieldset>
+                    <p class="form-paragraph-text">
+                        We certify that the information provided and the documents attached are true
+                        and correct and shall form an integral part hereof.
+
+                        We understand and agree that the information will be processed and used by Department of
+                        Trade and Industry (DTI) for accreditation purposes only and in accordance with the principles 
+                        and provisions of the Data Privacy Act of 2012 (DPA), its implementing Rules and Regulations
+                        (IRR), and National Privacy Commission (NPC) issuances.
+
+                        This further authorizes the DTI to conduct inspection and/or verification to determine
+                        the capacity and qualifications of our company and we shall inform DTI (in writing) of any
+                        changes in the information appearing in our application. Our company undertakes to maintain
+                        and to keep in good working condition the tools and equipment, and have the IMTE calibrated regularly.
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <p class="part-count">Part 5 of 5</p>
+                    <legend>Warranty/Undertaking</legend>
+                    <p class="form-paragraph-text">
+                        
+        vince Warrants the quality of workmanship and process undertaken by the shop for a period of 30 (thirty) 
+        days counted from the date of actual release and  delivery of each and/or job order to the respective customer.
+
+        This warranty does not cover damage caused by misuse, accidents, or alteration of workmanship; in addition, 
+        it is expressly understood that the shop management shall not be liable for any patent defect in the product and which is not included in the job contract.
+
+        We further undertake to abide by the rules and regulations promulgated by DTI and the terms and conditions of this warranty. 
+        In the event of violation on our part, our accreditation certificate may be cancelled at the discretion of the DTI.
+        
+                    </p>
+                </fieldset>
+
+            </form>
+
+            
+
+<aside class="form-progress-nav">
+    <ol>
+        
+            <li data-target="application-details-fieldset" class="step-item">
+                <span class="step-circle"></span>
+                <strong>Application Details</strong>
+                <i class="fa-solid fa-angle-right"></i>
+            </li>
+        
+            <li data-target="business-information-fieldset" class="step-item">
+                <span class="step-circle"></span>
+                <strong>Business/Personal Information</strong>
+                <i class="fa-solid fa-angle-right"></i>
+            </li>
+        
+            <li data-target="-fieldset" class="step-item">
+                <span class="step-circle"></span>
+                <strong>Authorized Signatory</strong>
+                <i class="fa-solid fa-angle-right"></i>
+            </li>
+        
+            <li data-target="-fieldset" class="step-item">
+                <span class="step-circle"></span>
+                <strong>Business Classification</strong>
+                <i class="fa-solid fa-angle-right"></i>
+            </li>
+        
+    </ol>
+    <div class="completion-percentage">
+        <div class="progress">
+            <div class="value" data-percent="">
+                <span>50%</span>
+            </div>
+            <div class="column">
+                <strong class="status">Incomplete</strong>
+                <div class="progress-bar">
+                    <div class="fill"></div>
+                </div>
+            </div>
+        </div>
+        <div class="actions">
+            <button class="save-draft-btn">Save Draft</button>
+            <button class="submit-btn">Submit</button>
+        </div>
+    </div>
+</aside>
+
+
+        </div>
+    </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

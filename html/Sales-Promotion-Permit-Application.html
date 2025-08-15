@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Create Sales Promotion Permit Application </title>
+
+    <!-- CSS -->
+   <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/documents.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/progress-nav.css">
+
+    <!-- JS -->
+    <script src="js/scripts.js"></script>
+    <script src="js/documents.js"></script>
+    <script src="js/formsets.js"></script>
+    <script src="js/lazy_loading.js"></script>
+    
+    <!-- HTMX -->
+    <script src="https://unpkg.com/htmx.org@latest"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="layout">
+        
+        <aside class="side-navbar extended">
+    <button id="collapse-nav-btn">
+        <i class="fa-solid fa-angle-left"></i>
+    </button>
+    <nav>
+        <header>
+            <h1>Collapse Navbar</h1>
+        </header>
+        <section aria-labelledby="main-menu-heading">
+            <h2 class="nav-section-heading">Main</h2>
+            <ul class="side-nav-list">
+                <li class="nav-item">
+                    <a href="/" class="nav-link">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown active">
+                    <button class="nav-dropdown-btn">
+                        <i class="fa-solid fa-file"></i>
+                        <span>Create</span>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </button>
+                    <ul class="nav-dropdown-list">
+                        <li>
+                            <a href="/documents/create/sales-promotion">Sales Promotion Application</a>
+                        </li>
+                        <li>
+                            <a href="/documents/create/personal-data-sheet">Personal Data Sheet</a>
+                        </li>
+                        <li>
+                            <a href="/documents/create/service-repair-accreditation">Service and Repair Accreditation</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section aria-label="others-menu-heading">
+            <h2 class="nav-section-heading">Others</h2>
+            <ul class="side-nav-list">
+                <li class="nav-item">
+                    <a href="" class="nav-link">
+                        <i class="fa-solid fa-gear"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="account-menu-heading" id="account-menu-section">
+            <ul class="side-nav-list">
+                <li class="nav-item">
+                    <a href="" id="profile-link">
+                        <img src="/media/profile_pictures/default-avatar-icon.jpg" alt="">
+                        <div id="logged-in-user-details">
+                            <strong>vince</strong>
+                            <p>Admin</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/users/logout" class="nav-link">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+    </nav>
+</aside>
+
+        <div class="main-content">
+            
+    <div class="form-container">
+        <header>
+            <h1>Sales Promotion Permit Application</h1>
+        </header>
+        <div class="form-wrapper">
+            <form class="documents-form" action="/documents/create/sales-promotion" method="POST">
+                <input type="hidden" name="csrfmiddlewaretoken" value="9emunK660fPk0OHTI32uwt7CUx8XtuBMW79jOB5swcdIeDwtN3eBcSVfvevfupek">
+
+                
+                    
+                        
+
+<fieldset id="promo-title-fieldset">
+    <p class="part-count">Part 1 of 6</p>
+    <legend>Promotion Details</legend>
+    <div class="stepped-layout">
+        
+            
+                <div class="step-grid">
+                    
+                        
+                            <div class="form-group 
+                                    
+                                        full-width
+                                    ">
+                                <label for="id_promo_title">Promo title <span class='required-label'>*</span></label>
+                                <input type="text" name="promo_title" maxlength="255" placeholder="Enter Promo title" class="form-group" required id="id_promo_title">
+                            </div>
+                        
+                    
+                </div>
+            
+        
+    </div>
+</fieldset>
+                    
+                
+                    
+                        
+
+<fieldset id="sponsors-fieldset">
+    <p class="part-count">Part 2 of 6</p>
+    <legend>Sponsor</legend>
+    <div class="stepped-layout">
+        
+            
+                <div class="step-grid">
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_sponsor_name">Sponsor name <span class='required-label'>*</span></label>
+                                <input type="text" name="sponsor_name" maxlength="255" placeholder="Enter Sponsor name" class="form-group" required id="id_sponsor_name">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_sponsor_telephone">Sponsor telephone</label>
+                                <input type="text" name="sponsor_telephone" maxlength="50" class="form-group" id="id_sponsor_telephone">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_sponsor_email">Sponsor email</label>
+                                <input type="email" name="sponsor_email" maxlength="254" class="form-group" id="id_sponsor_email">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_sponsor_authorized_rep">Sponsor authorized rep <span class='required-label'>*</span></label>
+                                <input type="text" name="sponsor_authorized_rep" maxlength="255" placeholder="Enter Sponsor authorized rep" class="form-group" required id="id_sponsor_authorized_rep">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_sponsor_designation">Sponsor designation <span class='required-label'>*</span></label>
+                                <input type="text" name="sponsor_designation" maxlength="255" placeholder="Enter Sponsor designation" class="form-group" required id="id_sponsor_designation">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    
+                                        full-width
+                                    ">
+                                <label for="id_sponsor_address">Sponsor address <span class='required-label'>*</span></label>
+                                <textarea name="sponsor_address" cols="40" rows="10" placeholder="Enter Sponsor address" class="form-group" required id="id_sponsor_address">
+</textarea>
+                            </div>
+                        
+                    
+                </div>
+            
+        
+    </div>
+</fieldset>
+                    
+                
+                    
+                        
+
+<fieldset id="advertising-fieldset">
+    <p class="part-count">Part 3 of 6</p>
+    <legend>Advertising Agency</legend>
+    <div class="stepped-layout">
+        
+            
+                <div class="step-grid">
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_advertising_agency_name">Advertising agency name</label>
+                                <input type="text" name="advertising_agency_name" maxlength="255" class="form-group" id="id_advertising_agency_name">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_advertising_agency_telephone">Advertising agency telephone</label>
+                                <input type="text" name="advertising_agency_telephone" maxlength="50" class="form-group" id="id_advertising_agency_telephone">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_advertising_agency_email">Advertising agency email</label>
+                                <input type="email" name="advertising_agency_email" maxlength="254" class="form-group" id="id_advertising_agency_email">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_advertising_agency_authorized_rep">Advertising agency authorized rep</label>
+                                <input type="text" name="advertising_agency_authorized_rep" maxlength="255" class="form-group" id="id_advertising_agency_authorized_rep">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_advertising_agency_designation">Advertising agency designation</label>
+                                <input type="text" name="advertising_agency_designation" maxlength="255" class="form-group" id="id_advertising_agency_designation">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    
+                                        full-width
+                                    ">
+                                <label for="id_advertising_agency_address">Advertising agency address</label>
+                                <textarea name="advertising_agency_address" cols="40" rows="10" class="form-group" id="id_advertising_agency_address">
+</textarea>
+                            </div>
+                        
+                    
+                </div>
+            
+        
+    </div>
+</fieldset>
+                    
+                
+                    
+                        
+
+<fieldset id="promo-period-fieldset">
+    <p class="part-count">Part 4 of 6</p>
+    <legend>Promo Period</legend>
+    <div class="stepped-layout">
+        
+            
+                <div class="step-grid">
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_promo_period_start">Promo period start</label>
+                                <input type="date" name="promo_period_start" class="form-group" id="id_promo_period_start">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_promo_period_end">Promo period end</label>
+                                <input type="date" name="promo_period_end" class="form-group" id="id_promo_period_end">
+                            </div>
+                        
+                    
+                </div>
+            
+        
+    </div>
+</fieldset>
+                    
+                
+                    
+                        
+
+<fieldset id="product-formset" data-label="product">
+    <p class="part-count">Part 5 of 6</p>
+    <legend>Product</legend>
+    
+    <!-- Management form for Django formset -->
+    <input type="hidden" name="product-TOTAL_FORMS" value="1" id="id_product-TOTAL_FORMS"><input type="hidden" name="product-INITIAL_FORMS" value="0" id="id_product-INITIAL_FORMS"><input type="hidden" name="product-MIN_NUM_FORMS" value="0" id="id_product-MIN_NUM_FORMS"><input type="hidden" name="product-MAX_NUM_FORMS" value="1000" id="id_product-MAX_NUM_FORMS">
+
+    <div class="stepped-layout">
+        <!-- Input form section (visible to user) -->
+        <div class="step-grid">
+            
+                
+                    
+                        <div class="form-group">
+                            <label for="template_name">Name <span class='required-label'>*</span></label>
+                            <!-- Create a template input with just the field name -->
+                            
+                                <input type="text" 
+                                       name="template_name" 
+                                       id="template_name" 
+                                       class="form-group"
+                                       placeholder="Enter Name"
+                                       maxlength="255">
+                            
+                            <div class="field-errors"></div>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="template_brand">Brand <span class='required-label'>*</span></label>
+                            <!-- Create a template input with just the field name -->
+                            
+                                <input type="text" 
+                                       name="template_brand" 
+                                       id="template_brand" 
+                                       class="form-group"
+                                       placeholder="Enter Brand"
+                                       maxlength="255">
+                            
+                            <div class="field-errors"></div>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="template_specifications">Specifications</label>
+                            <!-- Create a template input with just the field name -->
+                            
+                                <input type="text" 
+                                       name="template_specifications" 
+                                       id="template_specifications" 
+                                       class="form-group"
+                                       
+                                       >
+                            
+                            <div class="field-errors"></div>
+                        </div>
+                    
+                
+            
+        </div>
+
+        <button class="add-btn" type="button">Add</button>
+
+        <!-- Preview list where added items will be shown -->
+        <ol id="product-preview-list" class="preview-list">
+            <!-- Existing formset data (for edit mode) -->
+            
+                
+            
+        </ol>
+
+        <!-- Display formset errors -->
+        
+    </div>
+</fieldset>
+                    
+                
+                    
+                        <fieldset id="coverage-fieldset">
+    <p class="part-count">Part 6 of 6</p>
+    <legend>Coverage</legend>
+
+    <ul class="coverage-choice-list">
+        <li class="coverage-choice">
+            <div class="icon-group">
+                <i class="fa-solid fa-city"></i>
+            </div>
+            <div class="details">
+                <label for="id_coverage_NCR">NCR</label>
+                <p>or several regions including Metro Manila</p>
+                <input type="radio" name="coverage" id="id_coverage_ncr" value="NCR" required>
+            </div>
+            <i class="fa-solid fa-check option-selected-icon"></i>
+        </li>
+
+        <li class="coverage-choice">
+            <div class="icon-group">
+                <i class="fa fa-map"></i>
+                <i class="fa-solid fa-2 number-icon"></i>
+            </div>
+            <div class="details">
+                <label for="id_coverage_2_REGIONS">2+ Regions</label>
+                <p>or more outside of NCR or Metro Manila</p>
+                <input type="radio" name="coverage" id="id_coverage_2_REGIONS" value="2_REGIONS">
+            </div>
+            <i class="fa-solid fa-check option-selected-icon"></i>
+        </li>
+
+        <li class="coverage-choice">
+            <div class="icon-group">
+                <i class="fa fa-map"></i>
+                <i class="fa-solid fa-1 number-icon"></i>
+            </div>
+            <div class="details">
+                <label for="id_coverage_1_REGION_2_PROVINCES">Single Region</label>
+                <p>covering 2 provinces or more</p>
+                <input type="radio" name="coverage" id="id_coverage_1_REGION_2_PROVINCES" value="1_REGION_2_PROVINCES">
+            </div>
+            <i class="fa-solid fa-check option-selected-icon"></i>
+        </li>
+
+        <li class="coverage-choice">
+            <div class="icon-group">
+                <i class="fa fa-map-marker-alt"></i>
+            </div>
+            <div class="details">
+                <label for="id_coverage_1_PROVINCE">Single Province</label>
+                <p>covers only one province plus city/ies or municipality/ies</p>
+                <input type="radio" name="coverage" id="id_coverage_1_PROVINCE" value="1_PROVINCE">
+            </div>
+            <i class="fa-solid fa-check option-selected-icon"></i>
+        </li>
+    </ul>
+
+    <div class="coverage-text-inputs" id="id_2_REGIONS">
+        <div class="form-group">
+            <label for="">Region of Sponsor</label>
+            <input type="text" name="region_location_of_sponsor" maxlength="255" class="form-group" id="id_region_location_of_sponsor">
+        </div>
+        <div class="form-group">
+            <label for="">Regions Covered (separate with commas)</label>
+            <textarea name="regions_covered" cols="40" rows="10" class="form-group" id="id_regions_covered">
+</textarea>
+        </div>
+    </div>
+
+    <div class="coverage-text-inputs" id="id_1_REGION_2_PROVINCES">
+        <div class="form-group">
+            <label for="">Region</label>
+            <input type="text" name="single_region" maxlength="255" class="form-group" id="id_single_region">
+        </div>
+        <div class="form-group">
+            <label for="">Provinces (separate with commas)</label>
+            <textarea name="provinces_covered" cols="40" rows="10" class="form-group" id="id_provinces_covered">
+</textarea>
+        </div>
+    </div>
+
+    <div class="coverage-text-inputs" id="id_1_PROVINCE">
+        <div class="form-group">
+            <label for="">Single Province</label>
+            <input type="text" name="single_province" maxlength="255" class="form-group" id="id_single_province">
+        </div>
+        <div class="form-group">
+            <label for="">City/ies or Municipality/ies covered (separate with commas)</label>
+            <textarea name="cities_or_municipalities_covered" cols="40" rows="10" class="form-group" id="id_cities_or_municipalities_covered">
+</textarea>
+        </div>
+    </div>
+
+</fieldset>
+                    
+                
+
+            </form>
+
+            
+
+<aside class="form-progress-nav">
+    <ol>
+        
+            <li data-target="promo-title-fieldset" class="step-item">
+                <span class="step-circle"></span>
+                <strong>Promotion Details</strong>
+                <i class="fa-solid fa-angle-right"></i>
+            </li>
+        
+            <li data-target="sponsors-fieldset" class="step-item">
+                <span class="step-circle"></span>
+                <strong>Sponsor</strong>
+                <i class="fa-solid fa-angle-right"></i>
+            </li>
+        
+            <li data-target="advertising-fieldset" class="step-item">
+                <span class="step-circle"></span>
+                <strong>Advertising Agency</strong>
+                <i class="fa-solid fa-angle-right"></i>
+            </li>
+        
+            <li data-target="promo-period-fieldset" class="step-item">
+                <span class="step-circle"></span>
+                <strong>Promo Period</strong>
+                <i class="fa-solid fa-angle-right"></i>
+            </li>
+        
+    </ol>
+    <div class="completion-percentage">
+        <div class="progress">
+            <div class="value" data-percent="">
+                <span>50%</span>
+            </div>
+            <div class="column">
+                <strong class="status">Incomplete</strong>
+                <div class="progress-bar">
+                    <div class="fill"></div>
+                </div>
+            </div>
+        </div>
+        <div class="actions">
+            <button class="save-draft-btn">Save Draft</button>
+            <button class="submit-btn">Submit</button>
+        </div>
+    </div>
+</aside>
+
+
+        </div>
+    </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

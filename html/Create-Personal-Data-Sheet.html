@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Create Personal Data Sheet </title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/documents.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/progress-nav.css">
+
+    <!-- JS -->
+    <script src="js/scripts.js"></script>
+    <script src="js/documents.js"></script>
+    <script src="js/formsets.js"></script>
+    <script src="sjs/lazy_loading.js"></script>
+
+    <!-- HTMX -->
+    <script src="https://unpkg.com/htmx.org@latest"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="layout">
+        
+        <aside class="side-navbar extended">
+    <button id="collapse-nav-btn">
+        <i class="fa-solid fa-angle-left"></i>
+    </button>
+    <nav>
+        <header>
+            <h1>Collapse Navbar</h1>
+        </header>
+        <section aria-labelledby="main-menu-heading">
+            <h2 class="nav-section-heading">Main</h2>
+            <ul class="side-nav-list">
+                <li class="nav-item">
+                    <a href="/" class="nav-link">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown active">
+                    <button class="nav-dropdown-btn">
+                        <i class="fa-solid fa-file"></i>
+                        <span>Create</span>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </button>
+                    <ul class="nav-dropdown-list">
+                        <li>
+                            <a href="/documents/create/sales-promotion">Sales Promotion Application</a>
+                        </li>
+                        <li>
+                            <a href="/documents/create/personal-data-sheet">Personal Data Sheet</a>
+                        </li>
+                        <li>
+                            <a href="/documents/create/service-repair-accreditation">Service and Repair Accreditation</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section aria-label="others-menu-heading">
+            <h2 class="nav-section-heading">Others</h2>
+            <ul class="side-nav-list">
+                <li class="nav-item">
+                    <a href="" class="nav-link">
+                        <i class="fa-solid fa-gear"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="account-menu-heading" id="account-menu-section">
+            <ul class="side-nav-list">
+                <li class="nav-item">
+                    <a href="" id="profile-link">
+                        <img src="/media/profile_pictures/default-avatar-icon.jpg" alt="">
+                        <div id="logged-in-user-details">
+                            <strong>vince</strong>
+                            <p>Admin</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/users/logout" class="nav-link">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+    </nav>
+</aside>
+
+        <div class="main-content">
+            
+    <div class="form-container">
+        <header>
+            <h1>Personal Data Sheet</h1>
+        </header>
+        <div class="form-wrapper">
+
+            <form class="documents-form" action="/documents/create/personal-data-sheet" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="csrfmiddlewaretoken" value="unCXQ3F0zC5yjWIDeW0GgSWorFkH3qmmhgpMhUEm5ztWxLxdjWcNWhK12mHZ4lZU">
+
+                
+                    
+                        
+
+<fieldset id="personal-background-fieldset">
+    <p class="part-count">Part 1 of 5</p>
+    <legend>Personal Background</legend>
+    <div class="stepped-layout">
+        
+            
+                <div class="step-grid">
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_last_name">Last name <span class='required-label'>*</span></label>
+                                <input type="text" name="last_name" maxlength="50" placeholder="Enter Last name" class="form-group" required id="id_last_name">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_first_name">First name <span class='required-label'>*</span></label>
+                                <input type="text" name="first_name" maxlength="50" placeholder="Enter First name" class="form-group" required id="id_first_name">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_middle_name">Middle name</label>
+                                <input type="text" name="middle_name" maxlength="50" class="form-group" id="id_middle_name">
+                            </div>
+                        
+                    
+                </div>
+            
+        
+            
+                <div class="step-grid">
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_email_address">Email address <span class='required-label'>*</span></label>
+                                <input type="email" name="email_address" maxlength="254" placeholder="Enter Email address" class="form-group" required id="id_email_address">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_contact_number">Contact number <span class='required-label'>*</span></label>
+                                <input type="text" name="contact_number" maxlength="20" placeholder="Enter Contact number" class="form-group" required id="id_contact_number">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_current_address">Current address <span class='required-label'>*</span></label>
+                                <input type="text" name="current_address" class="form-group form-group" placeholder="Enter Current address" required id="id_current_address">
+                            </div>
+                        
+                    
+                </div>
+            
+        
+            
+                <div class="step-grid">
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_position">Position <span class='required-label'>*</span></label>
+                                <input type="text" name="position" maxlength="50" placeholder="Enter Position" class="form-group" required id="id_position">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_nationality">Nationality <span class='required-label'>*</span></label>
+                                <input type="text" name="nationality" maxlength="30" placeholder="Enter Nationality" class="form-group" required id="id_nationality">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_date_of_birth">Date of birth <span class='required-label'>*</span></label>
+                                <input type="date" name="date_of_birth" class="form-group" required id="id_date_of_birth">
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_sex">Sex <span class='required-label'>*</span></label>
+                                <select name="sex" placeholder="Enter Sex" class="form-group" required id="id_sex">
+  <option value="" selected>---------</option>
+
+  <option value="Male">Male</option>
+
+  <option value="Female">Female</option>
+
+  <option value="Non-Binary">Non-binary</option>
+
+  <option value="Prefer not to say">Prefer not to say</option>
+
+</select>
+                            </div>
+                        
+                    
+                        
+                            <div class="form-group 
+                                    ">
+                                <label for="id_civil_status">Civil status <span class='required-label'>*</span></label>
+                                <select name="civil_status" placeholder="Enter Civil status" class="form-group" required id="id_civil_status">
+  <option value="" selected>---------</option>
+
+  <option value="Single">Single</option>
+
+  <option value="Married">Married</option>
+
+  <option value="Widowed">Widowed</option>
+
+  <option value="Separated">Separated</option>
+
+  <option value="Divorced">Divorced</option>
+
+</select>
+                            </div>
+                        
+                    
+                </div>
+            
+        
+            
+                <div class="form-group" style="margin-top: 1rem;">
+                    <label for="">Image <span class='required-label'>*</span> (Passport Size Photo)</label>
+                    <div class="upload-image-container">
+
+                        <button class="upload-file-btn" type="button">
+                            <i class="fa-solid fa-upload"></i>
+                        </button>
+
+                        <h3 id="drag-drop-text">Drag and drop or <span class="highlighted-span">choose file</span> to upload</h3>
+                        <p id="file-text">No file chosen yet.</p>
+                        <input type="file" name="image" accept="image/*" placeholder="Enter Image" class="form-group" required id="id_image">
+
+                    </div>
+                </div>
+            
+        
+    </div>
+</fieldset>
+                    
+                
+                    
+                        
+
+<fieldset id="employee_background-formset" data-label="employee_background">
+    <p class="part-count">Part 2 of 5</p>
+    <legend>Employee Background</legend>
+    
+    <!-- Management form for Django formset -->
+    <input type="hidden" name="employee_background-TOTAL_FORMS" value="1" id="id_employee_background-TOTAL_FORMS"><input type="hidden" name="employee_background-INITIAL_FORMS" value="0" id="id_employee_background-INITIAL_FORMS"><input type="hidden" name="employee_background-MIN_NUM_FORMS" value="0" id="id_employee_background-MIN_NUM_FORMS"><input type="hidden" name="employee_background-MAX_NUM_FORMS" value="1000" id="id_employee_background-MAX_NUM_FORMS">
+
+    <div class="stepped-layout">
+        <!-- Input form section (visible to user) -->
+        <div class="step-grid">
+            
+                
+                    
+                        <div class="form-group">
+                            <label for="template_start_date">Start date <span class='required-label'>*</span></label>
+                            <!-- Create a template input with just the field name -->
+                            
+                                <input type="date" 
+                                       name="template_start_date" 
+                                       id="template_start_date" 
+                                       class="form-group"
+                                       
+                                       >
+                            
+                            <div class="field-errors"></div>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="template_end_date">End date</label>
+                            <!-- Create a template input with just the field name -->
+                            
+                                <input type="date" 
+                                       name="template_end_date" 
+                                       id="template_end_date" 
+                                       class="form-group"
+                                       
+                                       >
+                            
+                            <div class="field-errors"></div>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="template_employer">Employer <span class='required-label'>*</span></label>
+                            <!-- Create a template input with just the field name -->
+                            
+                                <input type="text" 
+                                       name="template_employer" 
+                                       id="template_employer" 
+                                       class="form-group"
+                                       placeholder="Enter Employer"
+                                       maxlength="255">
+                            
+                            <div class="field-errors"></div>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="template_position">Position <span class='required-label'>*</span></label>
+                            <!-- Create a template input with just the field name -->
+                            
+                                <input type="text" 
+                                       name="template_position" 
+                                       id="template_position" 
+                                       class="form-group"
+                                       placeholder="Enter Position"
+                                       maxlength="255">
+                            
+                            <div class="field-errors"></div>
+                        </div>
+                    
+                
+            
+        </div>
+
+        <button class="add-btn" type="button">Add</button>
+
+        <!-- Preview list where added items will be shown -->
+        <ol id="employee_background-preview-list" class="preview-list">
+            <!-- Existing formset data (for edit mode) -->
+            
+                
+            
+        </ol>
+
+        <!-- Display formset errors -->
+        
+    </div>
+</fieldset>
+                    
+                
+                    
+                        
+
+<fieldset id="trainings_attended-formset" data-label="trainings_attended">
+    <p class="part-count">Part 3 of 5</p>
+    <legend>Trainings Attended</legend>
+    
+    <!-- Management form for Django formset -->
+    <input type="hidden" name="trainings_attended-TOTAL_FORMS" value="1" id="id_trainings_attended-TOTAL_FORMS"><input type="hidden" name="trainings_attended-INITIAL_FORMS" value="0" id="id_trainings_attended-INITIAL_FORMS"><input type="hidden" name="trainings_attended-MIN_NUM_FORMS" value="0" id="id_trainings_attended-MIN_NUM_FORMS"><input type="hidden" name="trainings_attended-MAX_NUM_FORMS" value="1000" id="id_trainings_attended-MAX_NUM_FORMS">
+
+    <div class="stepped-layout">
+        <!-- Input form section (visible to user) -->
+        <div class="step-grid">
+            
+                
+                    
+                        <div class="form-group">
+                            <label for="template_start_date">Start date <span class='required-label'>*</span></label>
+                            <!-- Create a template input with just the field name -->
+                            
+                                <input type="date" 
+                                       name="template_start_date" 
+                                       id="template_start_date" 
+                                       class="form-group"
+                                       
+                                       >
+                            
+                            <div class="field-errors"></div>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="template_end_date">End date</label>
+                            <!-- Create a template input with just the field name -->
+                            
+                                <input type="date" 
+                                       name="template_end_date" 
+                                       id="template_end_date" 
+                                       class="form-group"
+                                       
+                                       >
+                            
+                            <div class="field-errors"></div>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="template_training_course">Training course <span class='required-label'>*</span></label>
+                            <!-- Create a template input with just the field name -->
+                            
+                                <input type="text" 
+                                       name="template_training_course" 
+                                       id="template_training_course" 
+                                       class="form-group"
+                                       placeholder="Enter Training course"
+                                       maxlength="255">
+                            
+                            <div class="field-errors"></div>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="template_conducted_by">Conducted by <span class='required-label'>*</span></label>
+                            <!-- Create a template input with just the field name -->
+                            
+                                <input type="text" 
+                                       name="template_conducted_by" 
+                                       id="template_conducted_by" 
+                                       class="form-group"
+                                       placeholder="Enter Conducted by"
+                                       maxlength="255">
+                            
+                            <div class="field-errors"></div>
+                        </div>
+                    
+                
+            
+        </div>
+
+        <button class="add-btn" type="button">Add</button>
+
+        <!-- Preview list where added items will be shown -->
+        <ol id="trainings_attended-preview-list" class="preview-list">
+            <!-- Existing formset data (for edit mode) -->
+            
+                
+            
+        </ol>
+
+        <!-- Display formset errors -->
+        
+    </div>
+</fieldset>
+                    
+                
+                    
+                        
+
+<fieldset id="educational_attainment-formset" data-label="educational_attainment">
+    <p class="part-count">Part 4 of 5</p>
+    <legend>Educational Attainment</legend>
+    
+    <!-- Management form for Django formset -->
+    <input type="hidden" name="educational_attainment-TOTAL_FORMS" value="1" id="id_educational_attainment-TOTAL_FORMS"><input type="hidden" name="educational_attainment-INITIAL_FORMS" value="0" id="id_educational_attainment-INITIAL_FORMS"><input type="hidden" name="educational_attainment-MIN_NUM_FORMS" value="0" id="id_educational_attainment-MIN_NUM_FORMS"><input type="hidden" name="educational_attainment-MAX_NUM_FORMS" value="1000" id="id_educational_attainment-MAX_NUM_FORMS">
+
+    <div class="stepped-layout">
+        <!-- Input form section (visible to user) -->
+        <div class="step-grid">
+            
+                
+                    
+                        <div class="form-group">
+                            <label for="template_start_date">Start date <span class='required-label'>*</span></label>
+                            <!-- Create a template input with just the field name -->
+                            
+                                <input type="date" 
+                                       name="template_start_date" 
+                                       id="template_start_date" 
+                                       class="form-group"
+                                       
+                                       >
+                            
+                            <div class="field-errors"></div>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="template_end_date">End date</label>
+                            <!-- Create a template input with just the field name -->
+                            
+                                <input type="date" 
+                                       name="template_end_date" 
+                                       id="template_end_date" 
+                                       class="form-group"
+                                       
+                                       >
+                            
+                            <div class="field-errors"></div>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="template_school">School <span class='required-label'>*</span></label>
+                            <!-- Create a template input with just the field name -->
+                            
+                                <input type="text" 
+                                       name="template_school" 
+                                       id="template_school" 
+                                       class="form-group"
+                                       placeholder="Enter School"
+                                       maxlength="255">
+                            
+                            <div class="field-errors"></div>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="template_course">Course <span class='required-label'>*</span></label>
+                            <!-- Create a template input with just the field name -->
+                            
+                                <input type="text" 
+                                       name="template_course" 
+                                       id="template_course" 
+                                       class="form-group"
+                                       placeholder="Enter Course"
+                                       maxlength="255">
+                            
+                            <div class="field-errors"></div>
+                        </div>
+                    
+                
+            
+        </div>
+
+        <button class="add-btn" type="button">Add</button>
+
+        <!-- Preview list where added items will be shown -->
+        <ol id="educational_attainment-preview-list" class="preview-list">
+            <!-- Existing formset data (for edit mode) -->
+            
+                
+            
+        </ol>
+
+        <!-- Display formset errors -->
+        
+    </div>
+</fieldset>
+                    
+                
+                    
+                        
+
+<fieldset id="character_references-formset" data-label="character_references">
+    <p class="part-count">Part 5 of 5</p>
+    <legend>Character References</legend>
+    
+    <!-- Management form for Django formset -->
+    <input type="hidden" name="character_references-TOTAL_FORMS" value="1" id="id_character_references-TOTAL_FORMS"><input type="hidden" name="character_references-INITIAL_FORMS" value="0" id="id_character_references-INITIAL_FORMS"><input type="hidden" name="character_references-MIN_NUM_FORMS" value="0" id="id_character_references-MIN_NUM_FORMS"><input type="hidden" name="character_references-MAX_NUM_FORMS" value="1000" id="id_character_references-MAX_NUM_FORMS">
+
+    <div class="stepped-layout">
+        <!-- Input form section (visible to user) -->
+        <div class="step-grid">
+            
+                
+                    
+                        <div class="form-group">
+                            <label for="template_name">Name <span class='required-label'>*</span></label>
+                            <!-- Create a template input with just the field name -->
+                            
+                                <input type="text" 
+                                       name="template_name" 
+                                       id="template_name" 
+                                       class="form-group"
+                                       placeholder="Enter Name"
+                                       maxlength="30">
+                            
+                            <div class="field-errors"></div>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="template_company">Company <span class='required-label'>*</span></label>
+                            <!-- Create a template input with just the field name -->
+                            
+                                <input type="text" 
+                                       name="template_company" 
+                                       id="template_company" 
+                                       class="form-group"
+                                       placeholder="Enter Company"
+                                       maxlength="50">
+                            
+                            <div class="field-errors"></div>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="template_email">Email</label>
+                            <!-- Create a template input with just the field name -->
+                            
+                                <input type="email" 
+                                       name="template_email" 
+                                       id="template_email" 
+                                       class="form-group"
+                                       
+                                       maxlength="254">
+                            
+                            <div class="field-errors"></div>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="template_contact_number">Contact number</label>
+                            <!-- Create a template input with just the field name -->
+                            
+                                <input type="text" 
+                                       name="template_contact_number" 
+                                       id="template_contact_number" 
+                                       class="form-group"
+                                       
+                                       maxlength="20">
+                            
+                            <div class="field-errors"></div>
+                        </div>
+                    
+                
+            
+        </div>
+
+        <button class="add-btn" type="button">Add</button>
+
+        <!-- Preview list where added items will be shown -->
+        <ol id="character_references-preview-list" class="preview-list">
+            <!-- Existing formset data (for edit mode) -->
+            
+                
+            
+        </ol>
+
+        <!-- Display formset errors -->
+        
+    </div>
+</fieldset>
+                    
+                
+
+            </form>
+
+            
+
+<aside class="form-progress-nav">
+    <ol>
+        
+            <li data-target="personal-background-fieldset" class="step-item">
+                <span class="step-circle"></span>
+                <strong>Personal Background</strong>
+                <i class="fa-solid fa-angle-right"></i>
+            </li>
+        
+    </ol>
+    <div class="completion-percentage">
+        <div class="progress">
+            <div class="value" data-percent="">
+                <span>50%</span>
+            </div>
+            <div class="column">
+                <strong class="status">Incomplete</strong>
+                <div class="progress-bar">
+                    <div class="fill"></div>
+                </div>
+            </div>
+        </div>
+        <div class="actions">
+            <button class="save-draft-btn">Save Draft</button>
+            <button class="submit-btn">Submit</button>
+        </div>
+    </div>
+</aside>
+
+        </div>
+    </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

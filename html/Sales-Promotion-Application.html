@@ -1,0 +1,376 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Sales Promotion Application </title>
+
+    <!-- CSS -->
+   <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/documents.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/progress-nav.css">
+
+    <!-- JS -->
+    <script src="/static/dashboard/js/scripts.js"></script>
+    <script src="/static/documents/js/documents.js"></script>
+    <script src="/static/documents/js/formsets.js"></script>
+    <script src="/static/documents/js/lazy_loading.js"></script>
+
+    <!-- HTMX -->
+    <script src="https://unpkg.com/htmx.org@latest"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="layout">
+        
+        <aside class="side-navbar extended">
+    <button id="collapse-nav-btn">
+        <i class="fa-solid fa-angle-left"></i>
+    </button>
+    <nav>
+        <header>
+            <h1>Collapse Navbar</h1>
+        </header>
+        <section aria-labelledby="main-menu-heading">
+            <h2 class="nav-section-heading">Main</h2>
+            <ul class="side-nav-list">
+                <li class="nav-item">
+                    <a href="/" class="nav-link">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown active">
+                    <button class="nav-dropdown-btn">
+                        <i class="fa-solid fa-file"></i>
+                        <span>Create</span>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </button>
+                    <ul class="nav-dropdown-list">
+                        <li>
+                            <a href="/documents/create/sales-promotion">Sales Promotion Application</a>
+                        </li>
+                        <li>
+                            <a href="/documents/create/personal-data-sheet">Personal Data Sheet</a>
+                        </li>
+                        <li>
+                            <a href="/documents/create/service-repair-accreditation">Service and Repair Accreditation</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section aria-label="others-menu-heading">
+            <h2 class="nav-section-heading">Others</h2>
+            <ul class="side-nav-list">
+                <li class="nav-item">
+                    <a href="" class="nav-link">
+                        <i class="fa-solid fa-gear"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="account-menu-heading" id="account-menu-section">
+            <ul class="side-nav-list">
+                <li class="nav-item">
+                    <a href="" id="profile-link">
+                        <img src="/media/profile_pictures/default-avatar-icon.jpg" alt="">
+                        <div id="logged-in-user-details">
+                            <strong>vince</strong>
+                            <p>Admin</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/users/logout" class="nav-link">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+    </nav>
+</aside>
+
+        <div class="main-content">
+            
+<div class="document-details-container">
+    <header>
+        <div class="column">
+            <h3>Sales Promotion Permit Application</h3>
+            <h1>Panda Promo</h1>
+        </div>
+        <div class="actions">
+
+        </div>
+    </header>
+    
+    <div class="details-grid">
+
+        <section class="grid-item" id="details-grid-item">
+
+            
+                
+                    
+
+<section class="details-section" id="dates">
+    <h4>Base Details</h4>
+    <ul>
+        
+            
+                <li class="label-value-row">
+                    <strong>User: </strong>
+                    <p>roel</p>
+                </li>
+            
+        
+            
+                <li class="label-value-row">
+                    <strong>Date Filed: </strong>
+                    <p>June 29, 2025</p>
+                </li>
+            
+        
+            
+                <li class="label-value-row">
+                    <strong>Promo Period Start: </strong>
+                    <p>June 30, 2025</p>
+                </li>
+            
+        
+            
+                <li class="label-value-row">
+                    <strong>Promo Period End: </strong>
+                    <p>July 13, 2025</p>
+                </li>
+            
+        
+    </ul>
+</section>
+                 
+            
+                
+                    
+
+<section class="details-section" id="sponsors">
+    <h4>Sponsor Details</h4>
+    <ul>
+        
+            
+                <li class="label-value-row">
+                    <strong>Sponsor Name: </strong>
+                    <p>Mr. Panda</p>
+                </li>
+            
+        
+            
+                <li class="label-value-row">
+                    <strong>Sponsor Address: </strong>
+                    <p>123 Panda St. Malabog, Albay</p>
+                </li>
+            
+        
+            
+                <li class="label-value-row">
+                    <strong>Sponsor Telephone: </strong>
+                    <p>-</p>
+                </li>
+            
+        
+            
+                <li class="label-value-row">
+                    <strong>Sponsor Email: </strong>
+                    <p>-</p>
+                </li>
+            
+        
+            
+                <li class="label-value-row">
+                    <strong>Sponsor Authorized Rep: </strong>
+                    <p>Panda Representative</p>
+                </li>
+            
+        
+            
+                <li class="label-value-row">
+                    <strong>Sponsor Designation: </strong>
+                    <p>Panda Designation</p>
+                </li>
+            
+        
+    </ul>
+</section>
+                 
+            
+                
+                    
+
+<section class="details-section" id="advertising">
+    <h4>Advertising Details</h4>
+    <ul>
+        
+            
+                <li class="label-value-row">
+                    <strong>Advertising Agency Name: </strong>
+                    <p>-</p>
+                </li>
+            
+        
+            
+                <li class="label-value-row">
+                    <strong>Advertising Agency Address: </strong>
+                    <p>-</p>
+                </li>
+            
+        
+            
+                <li class="label-value-row">
+                    <strong>Advertising Agency Telephone: </strong>
+                    <p>-</p>
+                </li>
+            
+        
+            
+                <li class="label-value-row">
+                    <strong>Advertising Agency Email: </strong>
+                    <p>-</p>
+                </li>
+            
+        
+            
+                <li class="label-value-row">
+                    <strong>Advertising Agency Authorized Rep: </strong>
+                    <p>-</p>
+                </li>
+            
+        
+            
+                <li class="label-value-row">
+                    <strong>Advertising Agency Designation: </strong>
+                    <p>-</p>
+                </li>
+            
+        
+    </ul>
+</section>
+                 
+            
+
+        </section>
+
+        <section class="grid-item" id="products-covered-grid-item">
+            <div class="row">
+                <div class="name-and-count">
+                    <h4>Products Covered</h4>
+                    <span class="products-count">2</span>
+                </div>
+                <div class="actions">
+                    <button id="search-product-btn">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    <button id="export-file-btn">
+                        <i class="fa-solid fa-file-export"></i>
+                    </button>
+                    <button id="add-product-btn">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            Product Name
+                            <button class="sort-products-btn">
+                                <i class="fa-solid fa-sort"></i>
+                            </button>
+                        </th>
+                        <th>
+                            Brand
+                            <button class="sort-products-btn">
+                                <i class="fa-solid fa-sort"></i>
+                            </button>
+                        </th>
+                        <th>
+                            Specifications
+                            <button class="sort-products-btn">
+                                <i class="fa-solid fa-sort"></i>
+                            </button>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                
+                    <tr class="value-tr">
+                        <td class="product-name-td">Panda Food</td>
+                        <td>The Panda Company</td>
+                        <td>This is the best panda food you can buy, super nice pls buy it!!!</td>
+                    </tr>
+                
+                    <tr class="value-tr">
+                        <td class="product-name-td">Jomashoes</td>
+                        <td>The Panda Company</td>
+                        <td>The best joma shoes for NSTP</td>
+                    </tr>
+                
+                </tbody>
+            </table>
+        </section>
+
+        <section class="grid-item" id="coverage-grid-item">
+            <header>
+                <h4>Coverage</h4>
+            </header>
+
+            <div class="content">
+                <ul class="summary">
+                    <li>
+                        <strong>Single province</strong>
+                        <p>Coverage Type</p>
+                    </li>
+
+                    
+                        <li>
+                            <strong>Albay</strong>
+                            <p>
+                                
+                                Province
+                                
+                            </p>
+                        </li>
+                    
+
+                    <li>
+                        <strong>3</strong>
+                        <p>Covered Locations</p>
+                    </li>
+                </ul>
+
+
+                <strong>Locations: </strong>
+                <p id="covered-locations">Legazpi, Daraga, Malabog</p>
+            </div>
+
+        </section>
+
+    </div>
+
+</div>
+
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Personal Data Sheet </title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/documents.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/progress-nav.css">
+
+    <!-- JS -->
+    <script src="/static/dashboard/js/scripts.js"></script>
+    <script src="/static/documents/js/documents.js"></script>
+    <script src="/static/documents/js/formsets.js"></script>
+    <script src="/static/documents/js/lazy_loading.js"></script>
+
+    <!-- HTMX -->
+    <script src="https://unpkg.com/htmx.org@latest"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="layout">
+        <aside class="side-navbar extended">
+    <button id="collapse-nav-btn">
+        <i class="fa-solid fa-angle-left"></i>
+    </button>
+    <nav>
+        <header>
+            <h1>Collapse Navbar</h1>
+        </header>
+        <section aria-labelledby="main-menu-heading">
+            <h2 class="nav-section-heading">Main</h2>
+            <ul class="side-nav-list">
+                <li class="nav-item">
+                    <a href="/" class="nav-link">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown active">
+                    <button class="nav-dropdown-btn">
+                        <i class="fa-solid fa-file"></i>
+                        <span>Create</span>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </button>
+                    <ul class="nav-dropdown-list">
+                        <li>
+                            <a href="/documents/create/sales-promotion">Sales Promotion Application</a>
+                        </li>
+                        <li>
+                            <a href="/documents/create/personal-data-sheet">Personal Data Sheet</a>
+                        </li>
+                        <li>
+                            <a href="/documents/create/service-repair-accreditation">Service and Repair Accreditation</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section aria-label="others-menu-heading">
+            <h2 class="nav-section-heading">Others</h2>
+            <ul class="side-nav-list">
+                <li class="nav-item">
+                    <a href="" class="nav-link">
+                        <i class="fa-solid fa-gear"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="account-menu-heading" id="account-menu-section">
+            <ul class="side-nav-list">
+                <li class="nav-item">
+                    <a href="" id="profile-link">
+                        <img src="/media/profile_pictures/default-avatar-icon.jpg" alt="">
+                        <div id="logged-in-user-details">
+                            <strong>vince</strong>
+                            <p>Admin</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/users/logout" class="nav-link">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+    </nav>
+            </aside>
+        <div class="main-content">
+            
+    <div class="document-details-container">
+
+    <header>
+        <div class="column">
+            <h3>Personal Data Sheet</h3>
+            <h1>Joe &quot;The Panda&quot; Marie</h1>
+        </div>
+        <div class="actions">
+
+        </div>
+    </header>
+
+    <div class="details-grid">
+        <section class="grid-item" id="details-grid-item">
+            <section class="details-section" id="personal-info">
+                <h4>Personal Information</h4>
+                <ul>
+                    <img src="" alt="">
+                
+                    <li class="label-value-row">
+                        <strong>First Name: </strong>
+                        <p>Joe</p>
+                    </li>
+                
+                    <li class="label-value-row">
+                        <strong>Middle Name: </strong>
+                        <p>&quot;The Panda&quot;</p>
+                    </li>
+                
+                    <li class="label-value-row">
+                        <strong>Last Name: </strong>
+                        <p>Marie</p>
+                    </li>
+        
+                    <li class="label-value-row">
+                        <strong>Email Address: </strong>
+                        <p>joemarie@gmail.com</p>
+                    </li>
+
+                    <li class="label-value-row">
+                        <strong>Position: </strong>
+                        <p>Panda</p>
+                    </li>
+
+                    <li class="label-value-row">
+                        <strong>Date of Birth: </strong>
+                        <p>Jan. 20, 2003</p>
+                    </li>
+
+                    <li class="label-value-row">
+                        <strong>Nationality: </strong>
+                        <p>Filipino</p>
+                    </li>
+
+                    <li class="label-value-row">
+                        <strong>Sex: </strong>
+                        <p>Male</p>
+                    </li>
+    
+                    <li class="label-value-row">
+                        <strong>Civil Status: </strong>
+                        <p>Single</p>
+                    </li>
+
+                    <li class="label-value-row">
+                        <strong>Current Address: </strong>
+                        <p>Panda St. Malabog</p>
+                    </li>
+
+                    <li class="label-value-row">
+                        <strong>Contact Number: </strong>
+                        <p>096123821</p>
+                    </li>
+                </ul>
+            </section>
+        </section>
+
+        <section class="grid-item tabs-section" data-lazy-loading="true">
+            <ul class="tabs-list">
+        
+                <li class="tab-item  active" 
+                    data-tab-target="employee-backgrounds"
+                    data-lazy-load="false">
+                    <i class="fas fa-briefcase"></i>
+                    <strong>Employee Backgrounds</strong>
+                    <span class="object-count">(3)</span>
+                </li>
+            
+                <li class="tab-item" 
+                    data-tab-target="training-courses"
+                    data-lazy-load="true">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <strong>Training Courses</strong>
+                    <span class="object-count">(0)</span>
+                        <span class="loading-indicator" style="display: none;">
+                            <i class="fas fa-spinner fa-spin"></i>
+                        </span>
+                </li>
+            
+                <li class="tab-item " 
+                    data-tab-target="educational-attainment"
+                    data-lazy-load="true">
+                    <i class="fas fa-graduation-cap"></i>
+                    <strong>Educational Attainment</strong>
+                    <span class="object-count">(0)</span>
+                        <span class="loading-indicator" style="display: none;">
+                            <i class="fas fa-spinner fa-spin"></i>
+                        </span>
+                </li>
+            
+                <li class="tab-item " 
+                    data-tab-target="character-references"
+                    data-lazy-load="true">
+                    <i class="fas fa-address-book"></i>
+                    <strong>Character References</strong>
+                    <span class="object-count">(0)</span>
+                        <span class="loading-indicator" style="display: none;">
+                            <i class="fas fa-spinner fa-spin"></i>
+                        </span>
+                </li>
+            </ul>
+
+            <div class="tab-content  active" 
+                    data-tab-content="employee-backgrounds"
+                    data-loaded="true">
+
+                <h3>Employee Backgrounds</h3>
+                    <dl>
+                        <div class="field-pair">
+                            <div class="column">
+                                <dt>Period</dt>
+                                <dd>Apr 2025 - Jul 2025</dd>
+                            </div>
+                        
+                            <div class="column">
+                                <dt>Employer</dt>
+                                <dd>Crispy &quot;Prince&quot; Olaguera</dd>
+                            </div>
+                        
+                            <div class="column">
+                                <dt>Position</dt>
+                                <dd>Fry Cook</dd>
+                            </div>
+                        </div>
+                    
+                        <div class="field-pair">
+                            <div class="column">
+                                <dt>Period</dt>
+                                <dd>Jul 2025 - Present</dd>
+                            </div>
+                        
+                            <div class="column">
+                                <dt>Employer</dt>
+                                <dd>Josh Miranda</dd>
+                            </div>
+                        
+                            <div class="column">
+                                <dt>Position</dt>
+                                <dd>Panda</dd>
+                            </div>
+                        </div>
+                    
+                        <div class="field-pair">
+                            <div class="column">
+                                <dt>Period</dt>
+                                <dd>Jul 2025 - Present</dd>
+                            </div>
+                        
+                            <div class="column">
+                                <dt>Employer</dt>
+                                <dd>Khian Carasicas</dd>
+                            </div>
+                        
+                            <div class="column">
+                                <dt>Position</dt>
+                                <dd>Reverse Cowgirl</dd>
+                            </div>      
+                        </div>    
+                    </dl>  
+            </div>
+        </section>
+    </div>
+</div>
+        </div>
+    </div>
+</body>
+</html>
